@@ -1,0 +1,182 @@
+﻿@using Automarket.Domain.ViewModels.Car
+@model List<Automarket.Domain.Entity.Car>
+
+@{
+    ViewBag.Title = "Список автомобилей";
+    Layout = "_Layout";
+}
+
+@{
+    var cardStyle = "col-md-12";
+    if (Model != null)
+    {
+        switch (Model.Count)
+        {
+            case 2:
+                cardStyle = "col-md-6";
+                break;
+            case 3:
+                cardStyle = "col-md-4";
+                break;
+        }
+    }
+}
+
+<style>
+    .card-buttons-group {
+        text-align: right;
+        padding: 10px;
+    }
+</style>
+
+<div class="card col-md-12" style="margin: 10px;">
+    <div class="card-buttons-group">
+        <button class='btn btn-primary' id='compareBtnId'>Сравнение</button>
+        @if (User.IsInRole("Admin"))
+        {
+            <button class='btn btn-success' id='addCarId'>Добавить</button>   
+        }
+    </div>
+</div>
+
+<div style="padding: 10px;"></div>
+@if (Model == null)
+{
+    <div class="card col-md-12">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="https://images.wallpaperscraft.ru/image/single/audi_r8_chrome_cw_5_matte_black_chernyj_vid_sboku_97060_1280x1024.jpg"
+                 class="img-fluid rounded-start rounded">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Список машин в данный момент пуст!</h5>
+                    <p class="card-text">
+                        В Скором времени список пополнится! Возвращайтесь позже!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding: 10px;"></div>
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-pills card-header-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+        </div>
+       @* <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>*@
+    </div>
+}
+else
+{
+    <div class="row">
+        @foreach (var car in Model)
+        {
+            <div class="row row-cols-1 @cardStyle text-center">
+                <div class="col" style="padding: 10px;">
+                    <div class="card">
+                        <img src="~/img/GreatCenter.jpg" class="card-img-top card-image" alt="@car.Name">
+                        <div class="card-body">
+                            <h5 class="card-title">@car.Name</h5>
+                            <p class="card-text">Описание: @car.Description</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Стоимость: @car.Price $</li>
+                            <li class="list-group-item">Тип Кузова: @car.TypeCar</li>
+                            <li class="list-group-item">Максимальная скорость: @car.Speed Km/h</li>
+                        </ul>
+                        <div class="card-body">
+                            <button class="btn btn-primary" onclick="openModal({ url: '/Car/GetCar', data: '@car.Id' })"
+                                    data-toggle="ajax-modal" data-target="Modal">Открыть</button>
+                             @if (User.IsInRole("Admin"))
+                             {
+                                 <a asp-controller="Car" asp-action="Delete" asp-route-id="@car.Id" class="btn btn-danger">Удалить</a>
+                             }
+                             <a asp-controller="Order" asp-action="CreateOrder" asp-route-id="@car.Id" class="btn btn-success">В корзину</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>   
+}
+
+@section pageScripts {
+
+    <script src="~/js/modal.js"></script>
+    <script>
+       let modal = $('#modal'); 
+
+       $('#saveBtn').on('click', function () {
+           $.ajax({
+               url: '@Url.Action("Save")',
+               type: 'POST',
+               // data: JSON.stringify(model),
+               success: function (response) {
+                   Swal.fire({
+                       title: 'Информация',
+                       text: response.description,
+                       icon: 'success',
+                       confirmButtonText: 'Окей'
+                   })
+               },
+               error: function (data) {
+                   Swal.fire({
+                       title: 'Информация',
+                       text: 'Ошибка валидации',
+                       icon: 'error',
+                       confirmButtonText: 'Окей'
+                   })
+               }
+           }) 
+        });
+        
+       $('#compareBtnId').on('click', function (){
+           $.ajax({
+               type: 'GET',
+               url : '@Url.Action("Compare")',
+               success: function (response) {
+                   $('.modal-dialog').addClass("modal-lg");
+                   modal.find(".modal-body").html(response);
+                   modal.modal('show')
+               }
+           });
+       });
+        
+       $(".btn-close").click(function(){
+            modal.modal('hide');
+       });
+       
+       $('#addCarId').on('click', function () {
+           $.ajax({
+              type: 'GET',
+              url : '/Car/Save',
+              success: function (response) {
+                  $('.modal-dialog').removeClass("modal-lg");
+                  modal.find(".modal-body").html(response);
+                  modal.modal('show')
+              },
+              failure: function () {
+                modal.modal('hide')
+              },
+              error: function (response) {
+                  alert(response.responseText);
+              }
+          });
+       });
+       
+    </script>
+}
