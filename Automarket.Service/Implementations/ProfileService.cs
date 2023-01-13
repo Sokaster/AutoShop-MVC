@@ -36,8 +36,7 @@ namespace Automarket.Service.Implementations
                         Id = x.Id,
                         Address = x.Address,
                         Age = x.Age,
-                        UserName = x.User.Name,
-                        Telephone = x.Telephone
+                        UserName = x.User.Name
                     })
                     .FirstOrDefaultAsync(x => x.UserName == userName);
 
@@ -67,7 +66,6 @@ namespace Automarket.Service.Implementations
 
                 profile.Address = model.Address;
                 profile.Age = model.Age;
-                profile.Telephone = model.Telephone;
 
                 await _profileRepository.Update(profile);
 

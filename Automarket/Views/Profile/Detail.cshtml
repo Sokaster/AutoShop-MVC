@@ -18,15 +18,10 @@
                         <div class="form-text">Возраст должен быть указан от 0 до 150 лет.</div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label text-black-50">Адрес</label>
-                        <textarea class="form-control" asp-for="Address" rows="3"></textarea>
+                        <label class="form-label text-black-50">Адрес+номер телефона</label>
+                        <textarea class="form-control" asp-for="Address" rows="2"></textarea>
                         <div class="form-text">Длина поля должна быть от 5 до 200 символов.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label text-black-50">Номер телефона</label>
-                        <textarea class="form-control" asp-for="Telephone" rows="1"></textarea>
-                        <div class="form-text">Длина поля должна быть от 5 до 40 символов.</div>
-                    </div>      
+                    </div>   
                     <div class="card-buttons-group">
                         <button class='btn btn-primary' id='saveProfileId'>Сохранить</button>
                     </div>
@@ -41,12 +36,12 @@
                     <h5 class="card-title">Данные аккаунта</h5>
                     <div class="mb-3">
                         <label class="form-label text-black-50">Логин</label>
-                        <input type="text" class="form-control" asp-for="UserName">
+                        <input type="text" class="form-control" asp-for="UserName" disabled="disabled">
                         <div class="form-text">Длина логина должна быть от 3 до 20 символов.</div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label text-black-50">Новый пароль</label>
-                        <input asp-for="NewPassword" class="form-control textbox-dg font-weight-bold text-center" type="password">
+                        <input name="NewPassword" class="form-control textbox-dg font-weight-bold text-center" type="password">
                     </div>
                     <div class="card-buttons-group">
                         <button class='btn btn-primary' id='saveAccountId'>Сохранить</button>
@@ -54,7 +49,6 @@
                 </form>
             </div>
         </div>
-    </div>
     </div>
 </div>
 <br />
@@ -72,7 +66,7 @@
                 </ul>
             </div>
             <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
+                <h5 class="card-title">Card-Body is Here</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
@@ -108,10 +102,13 @@
                 }
             });
         });
-        
         $('#saveAccountId').on('click', function (e) {
             e.preventDefault();
+
+            $('#UserName').removeAttr('disabled')
             const data = $('#accountFormId').serialize()
+            $('#UserName').attr('disabled', 'disabled')
+
             $.ajax({
                 url: '@Url.Action("ChangePassword", "Account")',
                 type: 'POST',
@@ -134,5 +131,30 @@
                 }
             });
         });
+        //$('#saveAccountId').on('click', function (e) {
+        //    e.preventDefault();
+        //    const data = $('#accountFormId').serialize()
+        //    $.ajax({
+        //        url: 'sobakaUrl.Action("ChangePassword", "Account")',
+        //        type: 'POST',
+        //        data: data,
+        //        success: function (response) {
+        //            Swal.fire({
+        //                title: 'Информация',
+        //                text: response.description,
+        //                icon: 'success',
+        //                confirmButtonText: 'Окей'
+        //            })
+        //        },
+        //        error: function (response) {
+        //            Swal.fire({
+        //                title: 'Информация',
+        //                text: response.responseJSON.errorMessage,
+        //                icon: 'error',
+        //                confirmButtonText: 'Окей'
+        //            })
+        //        }
+        //    });
+        //});
     </script>
 }

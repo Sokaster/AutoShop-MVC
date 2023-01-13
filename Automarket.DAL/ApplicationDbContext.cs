@@ -263,7 +263,6 @@ namespace Automarket.DAL
                 builder.Property(x => x.Id).ValueGeneratedOnAdd();
                 builder.Property(x => x.Age);
                 builder.Property(x => x.Address).IsRequired(false);
-                builder.Property(x => x.Telephone).IsRequired(false);
                 
                 builder.HasData(new Profile()
                 {

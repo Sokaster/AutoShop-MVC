@@ -75,12 +75,12 @@
             @if (User.Identity.IsAuthenticated)
             {
                 <a asp-controller="Basket" asp-action="Detail">
-                        <p><strong><span style="font-family:'Comic Sans MS'; font-weight: bold;"><span style="font-size:20px"></span></span><img alt="" src="https://ckeditor.com/apps/ckfinder/userfiles/files/shopping-cart.png" style="height:64px; margin:-20px 5px; width:64px" /></strong></p>
+                        <p><strong><span style="font-family:'Comic Sans MS'; font-weight: bold;"><span style="color:black; font-size:20px">  Корзина  </span></span><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:20px"></span></span><img alt="" src="https://avatars.mds.yandex.net/i?id=27718d87e2cba3e29c4c8e748a3759a39056215f-2432023-images-thumbs&n=13" style="height:64px; width:128px" /></strong></p>
 
                 </a>
                 
                 <a asp-controller="Profile" asp-action="Detail">
-                        <p><strong><span style="font-family:'Comic Sans MS'; font-weight: bold;"><span style="color:black; font-size:20px">  Профиль  </span></span><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:20px"><img alt="" src="https://ckeditor.com/apps/ckfinder/userfiles/files/icons8-%D0%BB%D0%BE%D0%B3%D0%B8%D0%BD-%D0%B8-%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D1%8C-64.png" style="height:64px; width:64px" /></span></span></strong></p>
+                        <p><strong><span style="font-family:'Comic Sans MS'; font-weight: bold;"><span style="color:black; font-size:20px">  Профиль  </span></span><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:20px"><img alt="" src="https://cdn0.iconfinder.com/data/icons/iphone-black-people-svg-icons/20/login_user_profile_account_logout_people_man_human-1024.png" style="height:64px; width:64px" /></span></span></strong></p>
                   @*  <text>PROFILE</text>   *@
                    @* <svg style="color: black;" xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                         <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
@@ -117,6 +117,18 @@
     </div>
   </div>
 </div>
+
+    <div class="modal fade" id="modalWhButtons" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Информация</h5>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>

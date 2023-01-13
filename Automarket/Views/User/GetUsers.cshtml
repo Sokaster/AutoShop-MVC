@@ -23,7 +23,7 @@
             <th scope="col">Логин</th>
             <th scope="col">Роль</th>
             <th scope="col">#</th>
-            <th scope="col">#</th>
+            @*<th scope="col">#</th>*@
         </tr>
         </thead>
         <tbody>
@@ -40,11 +40,11 @@
                         </button>
                     </form>
                 </td>
-                <td>
-                    <button type="submit" class="btn btn-sm btn-primary" onclick="openModal({ url: '@Url.Action("", "User")', data: @user.Id })">
+               @* <td>
+                    <button type="submit" class="btn btn-sm btn-primary" onclick="openModal({ url: '@Url.Action("","User")', data: @user.Id })">
                         Посмотреть
                     </button>
-                </td>
+                </td>*@
             </tr>
         }
         </tbody>

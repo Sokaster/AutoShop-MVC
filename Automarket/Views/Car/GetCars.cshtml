@@ -32,10 +32,10 @@
 <div class="card col-md-12" style="margin: 10px;">
     <div class="card-buttons-group">
         <button class='btn btn-primary' id='compareBtnId'>Сравнение</button>
-        @if (User.IsInRole("Admin"))
+        @*@if (User.IsInRole("Admin"))
         {
             <button class='btn btn-success' id='addCarId'>Добавить</button>   
-        }
+        }*@
     </div>
 </div>
 
@@ -124,7 +124,7 @@ else
            $.ajax({
                url: '@Url.Action("Save")',
                type: 'POST',
-               // data: JSON.stringify(model),
+              // data: JSON.stringify(model),
                success: function (response) {
                    Swal.fire({
                        title: 'Информация',

@@ -13,9 +13,8 @@ namespace Automarket.Domain.ViewModels.Order
         [Display(Name = "Дата создания")]
         public DateTime DateCreated { get; set; }
 
-        [Display(Name = "Адрес+Телефон")]
+        [Display(Name = "Адрес и номер телефона")]
         [Required(ErrorMessage = "Укажите ваш адрес и номер телефона")]
-        [MinLength(5, ErrorMessage = "В поле должно  быть больше 5 символов")] 
         [MaxLength(200, ErrorMessage = "В поле должно быть меньше 200 символов")]
         public string Address { get; set; }
         

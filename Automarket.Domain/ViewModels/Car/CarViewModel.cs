@@ -14,7 +14,7 @@ namespace Automarket.Domain.ViewModels.Car
         public string Name { get; set; }
         
         [Display(Name = "Описание")]
-        [MinLength(10, ErrorMessage = "Минимальная длина должна быть больше 10 символов")]
+        [MinLength(5, ErrorMessage = "Минимальная длина должна быть больше 5 символов")]
         public string Description { get; set; }
         
         [Display(Name = "Модель")]

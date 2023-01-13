@@ -18,8 +18,8 @@
 }
 
 .card-image {
-    filter: grayscale(0);
-    transition: 0s;
+    filter: grayscale(1);
+    transition: 1s;
 }
 .card-image:hover {
     filter: grayscale(0);
