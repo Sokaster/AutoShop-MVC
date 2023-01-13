@@ -37,6 +37,7 @@ namespace Automarket.Domain.ViewModels.Car
         [Required(ErrorMessage = "Выберите тип")]
         public string TypeCar { get; set; }
         public IFormFile Avatar { get; set; }
+        public string ImageUrl { get; set; }
         public byte[]? Image { get; set; }
     }
 }

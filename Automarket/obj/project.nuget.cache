@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "k3vzNbYcZGt/dNBguyLAEnqu1ciynMzSUQarGXnzBxuxslBxBjZxfgOz1UPsUC5QPtZ4+MjtduLvaQtDB2zI4g==",
+  "dgSpecHash": "kB7tL2SmlyteZoI0VzizF7XzFxGjHLtp07dJYNzu9AySVHFkrGMXAjfhoC1eCzYLXmLTgnxXixdWaCJCdNTgUg==",
   "success": true,
   "projectFilePath": "D:\\TotalWin\\Automarket-develop\\Automarket\\Automarket.csproj",
   "expectedPackageFiles": [
@@ -44,9 +44,14 @@
     "C:\\Users\\danen\\.nuget\\packages\\nlog\\5.0.0-rc2\\nlog.5.0.0-rc2.nupkg.sha512",
     "C:\\Users\\danen\\.nuget\\packages\\nlog.extensions.logging\\5.0.0-rc2\\nlog.extensions.logging.5.0.0-rc2.nupkg.sha512",
     "C:\\Users\\danen\\.nuget\\packages\\nlog.web.aspnetcore\\5.0.0-rc2\\nlog.web.aspnetcore.5.0.0-rc2.nupkg.sha512",
+    "C:\\Users\\danen\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.5.0\\runtime.native.system.data.sqlclient.sni.4.5.0.nupkg.sha512",
+    "C:\\Users\\danen\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\danen\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\danen\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\danen\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\danen\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\danen\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
+    "C:\\Users\\danen\\.nuget\\packages\\system.data.sqlclient\\4.6.0\\system.data.sqlclient.4.6.0.nupkg.sha512",
     "C:\\Users\\danen\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\danen\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
     "C:\\Users\\danen\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.8.0\\system.identitymodel.tokens.jwt.6.8.0.nupkg.sha512",

@@ -9,7 +9,7 @@ namespace Automarket.Domain.Entity
     {
         public long Id { get; set; }
         public byte Age { get; set; }
-        
+        public string Telephone { get; set; }
         public string Address { get; set; }
         
         public long UserId { get; set; }

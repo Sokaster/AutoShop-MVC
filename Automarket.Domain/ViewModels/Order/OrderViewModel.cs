@@ -12,7 +12,7 @@
         public string TypeCar { get; set; }
         public byte[]? Image { get; set; }
         public string Address { get; set; }
-        
+        public string ImageUrl { get; set; }
         public string FirstName { get; set; }
         
         public string LastName { get; set; }

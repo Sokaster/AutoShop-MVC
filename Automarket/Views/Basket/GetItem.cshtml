@@ -2,8 +2,9 @@
 
 <div class="row">
     <div class="col-md-12">
-    <img src="data:image/jpeg;base64,@Convert.ToBase64String(Model?.Image ?? Array.Empty<byte>())"
-         class="img-fluid rounded-start rounded">
+        <img src="https://s7.hostingkartinok.com/uploads/images/2014/02/a322807046bb82145f539d2e7fb2246c.png"
+        class="img-fluid rounded-start rounded">
+    @*<img src="data:image/jpeg;base64,@Convert.ToBase64String(Model?.Image ?? Array.Empty<byte>())"*@
     </div>
     <div class="col-md-6">
         <ul class="list-group list-group-flush">
@@ -16,7 +17,7 @@
     <div class="col-md-6">
         <ul class="list-group list-group-flush">
            <li class="list-group-item">ФИО: @Model.FirstName @Model.LastName.Substring(0, 1) @Model.MiddleName.Substring(0, 1)</li>
-            <li class="list-group-item">Адрес: @Model.Address</li>
+            <li class="list-group-item">Адрес+Телефон: @Model.Address</li>
             <li class="list-group-item">Дата создания: @Model.DateCreate</li>
        </ul> 
     </div>
